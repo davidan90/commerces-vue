@@ -7,7 +7,7 @@
       <p>Lucas ipsum dolor sit amet grievous hoth skywalker wedge zabrak tatooine darth padmé hutt solo.</p>
     </section>
     <footer>
-      <button @click="close">Close</button>
+      <button @click="close">{{ $t("app.close") }}</button>
     </footer>
   </Aside>
 </template>

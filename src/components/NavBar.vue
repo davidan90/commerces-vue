@@ -1,11 +1,11 @@
 <template>
   <nav id="navBar">
     <span>
-      <router-link to="/home">Home</router-link>
+      <router-link to="/home">{{ $t("home.title") }}</router-link>
     </span>
     <span>
-      <router-link to="/about">About</router-link>
-    </span>    
+      <router-link to="/contact">{{ $t("contact.title") }}</router-link>
+    </span>
   </nav>
 </template>
 

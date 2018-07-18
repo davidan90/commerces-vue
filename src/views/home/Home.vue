@@ -1,9 +1,11 @@
 <template>
   <section id="home">
-    <h1>{{ title }}</h1>
-    <Spinner v-if="isLoading"/>
-    <CommercesTable :commerces="commerces" @show-commerce-detail="showCommerceDetailHandler"/>
-    <CommerceDetail :commerce="commerceSelected"/>
+    <article>
+      <h1>{{ $t("home.sections.commerces.title") }}</h1>
+      <Spinner v-if="isLoading"/>
+      <CommercesTable :commerces="commerces" @show-commerce-detail="showCommerceDetailHandler"/>
+      <CommerceDetail :commerce="commerceSelected"/>
+    </article>
   </section>
 </template>
 
@@ -42,7 +44,6 @@ export default {
   },
   data() {
     return {
-      title: "Commerces",
       commerceSelected: undefined
     };
   },
@@ -82,7 +83,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#home {
+#home,
+#home article {
   width: 100%;
   display: flex;
   flex-direction: column;

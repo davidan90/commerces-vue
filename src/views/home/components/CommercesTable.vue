@@ -21,7 +21,7 @@
       </div>
     </div>
     <div v-if="!hasCommerces" class="table empty">
-      <span>Commerces not found</span>
+      <span>{{ $t("home.sections.commerces.table.empty") }}</span>
     </div>
   </div>
 </template>
@@ -37,12 +37,16 @@ export default {
       type: Array
     }
   },
-  data() {
-    return {
-      headers: ["Name", "NIF", "Year"]
-    };
-  },
   computed: {
+    headers() {
+      const locale = this.$i18n.locale;
+      const messages = this.$i18n.messages[locale];
+      return [
+        messages.home.sections.commerces.table.head.name,
+        messages.home.sections.commerces.table.head.nif,
+        messages.home.sections.commerces.table.head.year
+      ];
+    },
     hasCommerces() {
       return this.commerces && this.commerces.length;
     }
@@ -117,6 +121,7 @@ export default {
 
   &.empty {
     width: 100%;
+    text-align: center;
     background-color: $gray-color;
   }
 }

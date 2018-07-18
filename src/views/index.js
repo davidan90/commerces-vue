@@ -1,5 +1,5 @@
 import Home from "./home/Home";
-import About from "./about/About";
+import Contact from "./contact/Contact";
 import NotFound from "./notFound/NotFound";
 
-export { Home, About, NotFound };
+export { Home, Contact, NotFound };
