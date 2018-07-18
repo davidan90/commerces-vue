@@ -34,6 +34,11 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: $second-color;
 
+  header.header-container,
+  main.main-container {
+    box-sizing: border-box;
+  }
+
   header.header-container {
     width: 100%;
     display: flex;
@@ -69,6 +74,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 1.5rem;
   }
 }
 

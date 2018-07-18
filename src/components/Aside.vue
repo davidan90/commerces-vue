@@ -16,12 +16,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$asideHeight: 30vw;
+@import "../assets/styles/colors";
+@import "../assets/styles/responsive";
+$asideWidth: 30vw;
 $asideActiveRight: 0vw;
 
 @keyframes activate {
   0% {
-    right: -$asideHeight;
+    right: -$asideWidth;
   }
   100% {
     right: $asideActiveRight;
@@ -32,9 +34,11 @@ aside {
   display: none;
   position: fixed;
   top: 0;
-  width: $asideHeight;
+  width: $asideWidth;
+  min-width: 300px;
   height: 100%;
-  background-color: #72838c;
+  background-color: $primary-color;
+  box-shadow: -5px 0px 5px -2px rgba(0, 0, 0, 0.75);
 
   &.active {
     display: flex;
@@ -43,6 +47,10 @@ aside {
     justify-content: flex-start;
     right: $asideActiveRight;
     animation: activate 0.5s;
+  }
+
+  @media #{$screen-s} {
+    width: 100%;
   }
 }
 </style>
