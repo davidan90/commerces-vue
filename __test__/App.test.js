@@ -4,15 +4,19 @@ import App from "../src/App";
 describe("App.test.js", () => {
   const params = {
     mocks: {
-      $t: () => {}
+      $t: key => key
     }
   };
 
-  it("contains id exampleApp", () => {
-    expect(shallow(App).contains("#exampleApp")).toBe(true);
+  describe("Unit", () => {
+    it("contains id exampleApp", () => {
+      expect(shallow(App).contains("#exampleApp")).toBe(true);
+    });
   });
 
-  it("renders correctly", () => {
-    expect(mount(App, params).element).toMatchSnapshot();
+  describe("Snapshots", () => {
+    it("default render", () => {
+      expect(mount(App, params).html()).toMatchSnapshot();
+    });
   });
 });

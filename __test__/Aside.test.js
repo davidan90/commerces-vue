@@ -6,15 +6,24 @@ describe("Aside.test.js", () => {
   const params = {
     store,
     mocks: {
-      $t: () => {}
+      $t: key => key
     }
   };
 
-  it("find only one aside tag", () => {
-    expect(shallow(Aside, params).findAll("aside").length).toBe(1);
+  describe("Unit", () => {
+    it("find only one aside tag", () => {
+      expect(shallow(Aside, params).findAll("aside").length).toBe(1);
+    });
+
+    it("if store is true, have class active", () => {
+      params.store.state.app.aside.show = true;
+      expect(shallow(Aside, params).contains("aside.active")).toBeTruthy();
+    });
   });
 
-  it("renders correctly", () => {
-    expect(mount(Aside, params).element).toMatchSnapshot();
+  describe("Snapshots", () => {
+    it("default render", () => {
+      expect(mount(Aside, params).html()).toMatchSnapshot();
+    });
   });
 });

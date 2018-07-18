@@ -6,25 +6,29 @@ describe("Home.test.js", () => {
   const params = {
     store,
     mocks: {
-      $t: () => {}
+      $t: key => key
     }
   };
 
-  it("contains id home", () => {
-    expect(shallow(Home, params).contains("#home")).toBe(true);
+  describe("Unit", () => {
+    it("contains id home", () => {
+      expect(shallow(Home, params).contains("#home")).toBe(true);
+    });
+
+    it("isLoading is true", () => {
+      expect(shallow(Home, params).vm.isLoading).toBe(true);
+    });
+
+    it("if isLoading is false, Spinner remove", () => {
+      const wrapper = shallow(Home, params);
+      wrapper.setProps({ isLoading: false });
+      expect(wrapper.contains(".load-spinner")).toBeFalsy();
+    });
   });
 
-  it("isLoading is true", () => {
-    expect(shallow(Home, params).vm.isLoading).toBe(true);
-  });
-
-  it("if isLoading is false, Spinner remove", () => {
-    const wrapper = shallow(Home, params);
-    wrapper.setProps({ isLoading: false });
-    expect(wrapper.contains(".load-spinner")).toBeFalsy();
-  });
-
-  it("renders correctly", () => {
-    expect(mount(Home, params).element).toMatchSnapshot();
+  describe("Snapshots", () => {
+    it("default render", () => {
+      expect(mount(Home, params).html()).toMatchSnapshot();
+    });
   });
 });
