@@ -2,17 +2,17 @@ import { shallow, mount } from "vue-test-utils";
 import App from "../src/App";
 
 describe("App.test.js", () => {
-  it("contains #exampleApp", () => {
-    const wrapper = shallow(App);
-    expect(wrapper.contains("#exampleApp")).toBe(true);
+  const params = {
+    mocks: {
+      $t: () => {}
+    }
+  };
+
+  it("contains id exampleApp", () => {
+    expect(shallow(App).contains("#exampleApp")).toBe(true);
   });
 
   it("renders correctly", () => {
-    const wrapper = mount(App, {
-      mocks: {
-        $t: () => {}
-      }
-    });
-    expect(wrapper.element).toMatchSnapshot();
+    expect(mount(App, params).element).toMatchSnapshot();
   });
 });
