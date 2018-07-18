@@ -8,7 +8,11 @@ describe("App.test.js", () => {
   });
 
   it("renders correctly", () => {
-    const wrapper = mount(App);
+    const wrapper = mount(App, {
+      mocks: {
+        $t: () => {}
+      }
+    });
     expect(wrapper.element).toMatchSnapshot();
   });
 });
