@@ -1,6 +1,8 @@
 <template>
   <section id="contact">
-    <h1>{{ $t("contact.title") }}</h1>
+    <article>
+      <h1>{{ $t("contact.title") }}</h1>
+    </article>
   </section>
 </template>
 

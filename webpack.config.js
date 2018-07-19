@@ -1,11 +1,12 @@
 var path = require("path");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
 var webpack = require("webpack");
 
 module.exports = {
   entry: "./src/main.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "/dist/",
+    publicPath: "./",
     filename: "build.js"
   },
   module: {
@@ -49,7 +50,7 @@ module.exports = {
         test: /\.(png|jpg|gif|svg)$/,
         loader: "file-loader",
         options: {
-          name: "[name].[ext]?[hash]"
+          name: "assets/img/[name].[ext]?[hash]"
         }
       }
     ]
@@ -61,7 +62,7 @@ module.exports = {
     extensions: ["*", ".js", ".vue", ".json"]
   },
   devServer: {
-    contentBase: path.join(__dirname, "src/"),
+    contentBase: path.join(__dirname, "dist/"),
     historyApiFallback: true,
     noInfo: true,
     overlay: true,
@@ -70,7 +71,12 @@ module.exports = {
   performance: {
     hints: false
   },
-  devtool: "#eval-source-map"
+  devtool: "#eval-source-map",
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html"
+    })
+  ]
 };
 
 if (process.env.NODE_ENV === "production") {
