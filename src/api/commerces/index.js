@@ -8,11 +8,12 @@ export const commerces = {
 
   getAll() {
     const options = {
-      method: "GET"
+      method: "GET",
+      headers: { "Content-Type": "application/json" }
     };
     return fetch(this.endpoints().all, options)
       .then(response => response.json())
-      .catch(this.logError.bind(this, error));
+      .catch(error => this.logError(error));
   },
 
   logError(error) {

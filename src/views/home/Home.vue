@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import Api from "../../api";
 import { Spinner } from "../../components";
 import { CommercesTable, CommerceDetail } from "./components";
 
@@ -61,12 +60,12 @@ export default {
       function() {
         this.$store.dispatch("setAllCommerces", mockCommerces);
       }.bind(this),
-      5000
+      2000
     );
 
-    // Api.commerces.getAll().then(commerces => {
-    //   if(commerces) {
-    //     this.$store.dispatch('setAllCommerces', commerces);
+    // this.$api.commerces.getAll().then(commerces => {
+    //   if (commerces) {
+    //     this.$store.dispatch("setAllCommerces", commerces);
     //     this.isLoading = false;
     //   }
     // });
