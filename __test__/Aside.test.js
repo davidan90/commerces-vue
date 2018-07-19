@@ -11,6 +11,10 @@ describe("Aside.test.js", () => {
   };
 
   describe("Unit", () => {
+    let wrapper;
+    beforeAll(() => {
+      wrapper = shallow(Aside, params);
+    });
     it("find only one aside tag", () => {
       expect(shallow(Aside, params).findAll("aside").length).toBe(1);
     });

@@ -9,20 +9,40 @@ describe("Home.test.js", () => {
       $t: key => key
     }
   };
+  const commerceMock = {
+    id: 1,
+    name: "Telefonica",
+    nif: "50732",
+    year: 1950
+  };
 
   describe("Unit", () => {
+    let wrapper;
+    beforeEach(() => {
+      wrapper = shallow(Home, params);
+    });
+
     it("contains id home", () => {
-      expect(shallow(Home, params).contains("#home")).toBe(true);
+      expect(wrapper.contains("#home")).toBe(true);
     });
 
     it("isLoading is true", () => {
-      expect(shallow(Home, params).vm.isLoading).toBe(true);
+      expect(wrapper.vm.isLoading).toBe(true);
     });
 
     it("if isLoading is false, Spinner remove", () => {
-      const wrapper = shallow(Home, params);
       wrapper.setProps({ isLoading: false });
       expect(wrapper.contains(".load-spinner")).toBeFalsy();
+    });
+
+    it("showCommerceDetail set commerceSelected", () => {
+      wrapper.vm.showCommerceDetail(commerceMock);
+      expect(wrapper.vm.commerceSelected).toBe(commerceMock);
+    });
+
+    it("when showCommerceDetail set store app>aside>show to true", () => {
+      wrapper.vm.showCommerceDetail(commerceMock);
+      expect(wrapper.vm.$store.state.app.aside.show).toBeTruthy();
     });
   });
 

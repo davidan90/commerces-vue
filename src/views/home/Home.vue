@@ -3,7 +3,7 @@
     <article>
       <h1>{{ $t("home.sections.commerces.title") }}</h1>
       <Spinner v-if="isLoading"/>
-      <CommercesTable :commerces="commerces" @show-commerce-detail="showCommerceDetailHandler"/>
+      <CommercesTable :commerces="commerces" @show-commerce-detail="showCommerceDetail"/>
       <CommerceDetail :commerce="commerceSelected"/>
     </article>
   </section>
@@ -72,7 +72,7 @@ export default {
     // });
   },
   methods: {
-    showCommerceDetailHandler(commerce) {
+    showCommerceDetail(commerce) {
       if (commerce) {
         this.commerceSelected = commerce;
         this.$store.dispatch("showAside");
