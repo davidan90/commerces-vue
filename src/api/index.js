@@ -12,7 +12,7 @@ Vue.mixin({
   }
 });
 
-export default function () {
+export default function() {
   return {
     commerces
   };
