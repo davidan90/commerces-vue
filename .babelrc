@@ -8,6 +8,9 @@
     ],
     "stage-3"
   ],
+  "plugins": [
+    "syntax-dynamic-import"
+  ],
   "env": {
     "test": {
       "presets": [

@@ -3,11 +3,13 @@ var HtmlWebpackPlugin = require("html-webpack-plugin");
 var webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/main.js",
+  entry: {
+    index: "./src/main.js"
+  },
   output: {
+    chunkFilename: "[name].bundle.js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "/",
-    filename: "build.js"
+    publicPath: "/"
   },
   module: {
     rules: [
@@ -84,7 +86,8 @@ if (process.env.NODE_ENV === "production") {
   module.exports.output = {
     path: path.resolve(__dirname, "./dist"),
     publicPath: "./",
-    filename: "build.js"
+    filename: "main.js",
+    chunkFilename: "[name].chunk.js"
   };
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
