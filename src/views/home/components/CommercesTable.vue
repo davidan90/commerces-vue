@@ -60,6 +60,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/styles/mixins";
 @import "../../../assets/styles/colors";
 
 .table {
@@ -80,10 +81,8 @@ export default {
   .tr {
     .th,
     .td {
+      @include flex(row, center, center);
       height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     .th {
@@ -99,8 +98,7 @@ export default {
   }
 
   .table-body {
-    display: flex;
-    flex-direction: column;
+    @include flex(column, inherit, inherit);
     .tr {
       height: 3rem;
 

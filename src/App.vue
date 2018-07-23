@@ -27,6 +27,7 @@ export default {
 
 <style lang="scss">
 @import "./assets/styles/global";
+@import "./assets/styles/mixins";
 @import "./assets/styles/colors";
 
 #exampleApp {
@@ -41,18 +42,15 @@ export default {
   }
 
   header.header-container {
+    @include flex(row, center, flex-start);
     width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
     padding: 10px 0;
     background-color: $primary-color;
     text-transform: uppercase;
 
     .logo-container,
     .navbar-container {
-      display: flex;
-      align-items: center;
+      @include flex(row, center, inherit);
     }
 
     .logo-container {
@@ -71,10 +69,8 @@ export default {
   }
 
   main.main-container {
+    @include flex(column, center, inherit);
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     padding: 1.5rem;
   }
 }

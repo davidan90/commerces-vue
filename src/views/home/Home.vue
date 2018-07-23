@@ -66,7 +66,6 @@ export default {
     // this.$api.commerces.getAll().then(commerces => {
     //   if (commerces) {
     //     this.$store.dispatch("setAllCommerces", commerces);
-    //     this.isLoading = false;
     //   }
     // });
   },
@@ -82,12 +81,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../assets/styles/mixins";
+
 #home,
 #home article {
+  @include flex(column, center, center);
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 </style>

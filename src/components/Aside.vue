@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../assets/styles/mixins";
 @import "../assets/styles/colors";
 @import "../assets/styles/responsive";
 $asideWidth: 30vw;
@@ -41,10 +42,7 @@ aside {
   box-shadow: -5px 0px 5px -2px rgba(0, 0, 0, 0.75);
 
   &.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    @include flex(column, center, flex-start);
     right: $asideActiveRight;
     animation: activate 0.5s;
   }

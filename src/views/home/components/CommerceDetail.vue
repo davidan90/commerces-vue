@@ -35,13 +35,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../../../assets/styles/mixins";
 @import "../../../assets/styles/colors";
 $margin: 0.5rem;
 
 header,
 footer {
-  display: flex;
-  align-items: center;
+  @include flex(row, center, inherit);
   width: 100%;
   height: 50px;
   padding: 10px 0;
