@@ -1,3 +1,5 @@
+import { checkStatus, logError } from "../utils";
+
 export const commerces = {
   endpoints(params) {
     const mainUrl = "https://s3-eu-west-1.amazonaws.com/developers-tests";
@@ -9,14 +11,14 @@ export const commerces = {
   getAll() {
     const options = {
       method: "GET",
-      headers: { "Content-Type": "application/json" }
+      headers: {
+        "Content-Type": "application/json"
+      }
     };
     return fetch(this.endpoints().all, options)
+      .then(checkStatus)
       .then(response => response.json())
-      .catch(error => this.logError(error));
-  },
-
-  logError(error) {
-    console.error("Problema en commerces: ", error.message);
+      .then(data => data)
+      .catch(logError("Commerces getAll"));
   }
 };
