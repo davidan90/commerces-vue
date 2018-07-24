@@ -14,16 +14,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: ["vue-style-loader", "css-loader"]
-      },
-      {
-        test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader"]
-      },
-      {
-        test: /\.sass$/,
-        use: ["vue-style-loader", "css-loader", "sass-loader?indentedSyntax"]
+        test: /\.(css|scss|sass)$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader", options: { importLoaders: 1 } },
+          { loader: "postcss-loader" },
+          { loader: "sass-loader" }
+        ],
+        include: `${__dirname}/src`
       },
       {
         test: /\.vue$/,
@@ -89,7 +87,6 @@ if (process.env.NODE_ENV === "production") {
     filename: "main.js",
     chunkFilename: "[name].chunk.js"
   };
-  // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
       "process.env": {
