@@ -1,5 +1,6 @@
 module.exports = {
   verbose: true,
+  rootDir: "../../",
   moduleNameMapper: {
     "^vue$": "vue/dist/vue.common.js",
     "^@/(.*)$": "<rootDir>/src/$1"
