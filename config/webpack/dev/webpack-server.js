@@ -1,12 +1,11 @@
 const path = require("path");
+const opn = require("opn");
 const webpack = require("webpack");
 const WebpackDevServer = require("webpack-dev-server");
 const config = require("./webpack.config");
-const opn = require("opn");
-const port = 9000;
-const devHost = "0.0.0.0";
+const { PROTOCOL, HOST, PORT } = require("../env");
 
-opn(`http://${devHost}:${port}`);
+opn(`${PROTOCOL}://${HOST}:${PORT}`);
 
 new WebpackDevServer(webpack(config), {
   publicPath: config.output.publicPath,
@@ -15,9 +14,9 @@ new WebpackDevServer(webpack(config), {
   historyApiFallback: true,
   noInfo: true,
   overlay: true
-}).listen(port, devHost, error => {
+}).listen(PORT, HOST, error => {
   if (error) {
     return console.log(error);
   }
-  console.log(`Running at http://${devHost}:${port}`);
+  console.log(`Running at ${PROTOCOL}://${HOST}:${PORT}`);
 });

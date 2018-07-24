@@ -46,6 +46,7 @@ export default {
     width: 100%;
     padding: 10px 0;
     background-color: $primary-color;
+    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
 
     .logo-container,

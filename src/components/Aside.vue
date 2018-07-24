@@ -39,7 +39,7 @@ aside {
   min-width: 300px;
   height: 100%;
   background-color: $primary-color;
-  box-shadow: -5px 0px 5px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.7);
 
   &.active {
     @include flex(column, center, flex-start);

@@ -1,8 +1,10 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { TITLEPRO } = require("../env");
 
 module.exports = webpack => [
   new HtmlWebpackPlugin({
-    template: "./src/index.html"
+    template: "./src/index.html",
+    title: TITLEPRO
   }),
   new webpack.DefinePlugin({
     "process.env": {

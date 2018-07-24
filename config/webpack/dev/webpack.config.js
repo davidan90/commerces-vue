@@ -2,15 +2,18 @@ const path = require("path");
 const webpack = require("webpack");
 const loaders = require("../loaders");
 const devPlugins = require("./plugins");
+const { PROTOCOL, HOST, PORT } = require("../env");
 
 module.exports = {
-  entry: {
-    index: "./src/main.js"
-  },
+  entry: [
+    `webpack-dev-server/client?${PROTOCOL}://${HOST}:${PORT}`,
+    "webpack/hot/only-dev-server",
+    "./src/main.js"
+  ],
   output: {
-    chunkFilename: "[name].chunk.js",
     path: path.resolve(__dirname, "./dist"),
-    publicPath: "/"
+    publicPath: "/",
+    chunkFilename: "[name].chunk.js"
   },
   module: {
     rules: loaders
@@ -27,16 +30,3 @@ module.exports = {
   devtool: "#eval-source-map",
   plugins: devPlugins(webpack)
 };
-
-// if (process.env.NODE_ENV === "production") {
-//   module.exports.devtool = "#source-map";
-//   module.exports.output = {
-//     path: path.resolve(__dirname, "./dist"),
-//     publicPath: "./",
-//     filename: "main.js",
-//     chunkFilename: "[name].chunk.js"
-//   };
-//   module.exports.plugins = (module.exports.plugins || []).concat(
-//     prodPlugins(webpack)
-//   );
-// }
