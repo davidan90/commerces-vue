@@ -1,27 +1,29 @@
+const path = require("path");
+
 module.exports = [
+  {
+    test: /\.vue$/,
+    loader: "vue-loader"
+  },
   {
     test: /\.(css|scss|sass)$/,
     use: [
+      { loader: "vue-style-loader" },
       { loader: "style-loader" },
-      { loader: "css-loader", options: { importLoaders: 1 } },
-      { loader: "postcss-loader" },
+      {
+        loader: "css-loader",
+        options: { importLoaders: 1 }
+      },
+      {
+        loader: "postcss-loader",
+        options: {
+          config: {
+            path: path.resolve(__dirname, "./../postcss/postcss.config.js")
+          }
+        }
+      },
       { loader: "sass-loader" }
-    ],
-    include: `${__dirname}/src`
-  },
-  {
-    test: /\.vue$/,
-    loader: "vue-loader",
-    options: {
-      loaders: {
-        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-        // the "scss" and "sass" values for the lang attribute to the right configs here.
-        // other preprocessors should work out of the box, no loader config like this necessary.
-        scss: ["vue-style-loader", "css-loader", "sass-loader"],
-        sass: ["vue-style-loader", "css-loader", "sass-loader?indentedSyntax"]
-      }
-      // other vue-loader options go here
-    }
+    ]
   },
   {
     test: /\.js$/,

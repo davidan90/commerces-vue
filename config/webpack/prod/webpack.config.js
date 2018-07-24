@@ -22,9 +22,13 @@ module.exports = {
     },
     extensions: ["*", ".js", ".vue", ".json"]
   },
+  optimization: {
+    minimize: true
+  },
   performance: {
     hints: false
   },
   devtool: "#source-map",
-  plugins: prodPlugins(webpack)
+  plugins: prodPlugins(webpack),
+  mode: "production"
 };

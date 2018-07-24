@@ -28,5 +28,6 @@ module.exports = {
     hints: false
   },
   devtool: "#eval-source-map",
-  plugins: devPlugins(webpack)
+  plugins: devPlugins(webpack),
+  mode: "development"
 };

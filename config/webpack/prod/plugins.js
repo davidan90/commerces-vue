@@ -1,7 +1,9 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const VueLoaderPlugin = require("vue-loader/lib/plugin");
 const { TITLEPRO } = require("../env");
 
 module.exports = webpack => [
+  new VueLoaderPlugin(),
   new HtmlWebpackPlugin({
     template: "./src/index.html",
     title: TITLEPRO
@@ -9,12 +11,6 @@ module.exports = webpack => [
   new webpack.DefinePlugin({
     "process.env": {
       NODE_ENV: '"production"'
-    }
-  }),
-  new webpack.optimize.UglifyJsPlugin({
-    sourceMap: true,
-    compress: {
-      warnings: false
     }
   }),
   new webpack.LoaderOptionsPlugin({
