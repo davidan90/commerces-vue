@@ -10,9 +10,7 @@
   "eslint.run": "onType",
   "eslint.autoFixOnSave": true,
   "vetur.format.defaultFormatter.js": "prettier",
-  "vetur.format.defaultFormatter.css": "prettier",
   // relevant for 'prettier-eslint' instead of 'prettier'
-  "prettier.eslintIntegration": false,
   "vetur.format.defaultFormatter.css": "prettier",
   "vetur.format.defaultFormatter.less": "prettier",
   "vetur.format.defaultFormatter.postcss": "prettier",
@@ -22,5 +20,6 @@
   "vetur.format.defaultFormatter.ts": "prettier",
   "vetur.validation.style": true,
   // Validate vue-html in <template> using eslint-plugin-vue
-  "vetur.validation.template": true
+  "vetur.validation.template": true,
+  "stylelint.enable": false
 }

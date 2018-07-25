@@ -19,32 +19,34 @@ export default {
 @import "../assets/styles/mixins";
 @import "../assets/styles/colors";
 @import "../assets/styles/responsive";
-$asideWidth: 30vw;
-$asideActiveRight: 0vw;
+$aside-width: 30vw;
+$aside-active-right: 0;
 
 @keyframes activate {
   0% {
-    right: -$asideWidth;
+    right: -$aside-width;
   }
+
   100% {
-    right: $asideActiveRight;
+    right: $aside-active-right;
   }
 }
 
 aside {
+  background-color: $primary-color;
+  box-shadow: -3px 0 5px 0 rgba(0, 0, 0, 0.7);
   display: none;
+  height: 100%;
+  min-width: 300px;
   position: fixed;
   top: 0;
-  width: $asideWidth;
-  min-width: 300px;
-  height: 100%;
-  background-color: $primary-color;
-  box-shadow: -3px 0px 5px 0px rgba(0, 0, 0, 0.7);
+  width: $aside-width;
 
-  &.active {
+  .active {
     @include flex(column, center, flex-start);
-    right: $asideActiveRight;
+
     animation: activate 0.5s;
+    right: $aside-active-right;
   }
 
   @media #{$screen-s} {

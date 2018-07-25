@@ -31,10 +31,10 @@ export default {
 @import "./assets/styles/colors";
 
 #exampleApp {
+  color: $second-color;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $second-color;
 
   header.header-container,
   main.main-container {
@@ -43,11 +43,12 @@ export default {
 
   header.header-container {
     @include flex(row, center, flex-start);
-    width: 100%;
-    padding: 10px 0;
+
     background-color: $primary-color;
-    box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.7);
+    padding: 10px 0;
     text-transform: uppercase;
+    width: 100%;
 
     .logo-container,
     .navbar-container {
@@ -55,24 +56,26 @@ export default {
     }
 
     .logo-container {
-      width: 20vw;
       justify-content: center;
+      width: 20vw;
+
       img {
-        width: 60px;
         height: 50px;
+        width: 60px;
       }
     }
 
     .navbar-container {
-      width: 80vw;
       justify-content: flex-start;
+      width: 80vw;
     }
   }
 
   main.main-container {
     @include flex(column, center, inherit);
-    width: 100%;
+
     padding: 1.5rem;
+    width: 100%;
   }
 }
 

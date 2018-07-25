@@ -15,7 +15,8 @@ export default {
 
 #notFound {
   @include flex(column, center, center);
-  width: 100%;
+
   height: 5rem;
+  width: 100%;
 }
 </style>

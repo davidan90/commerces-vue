@@ -42,10 +42,11 @@ $margin: 0.5rem;
 header,
 footer {
   @include flex(row, center, inherit);
-  width: 100%;
+
+  background-color: $third-color;
   height: 50px;
   padding: 10px 0;
-  background-color: $third-color;
+  width: 100%;
 }
 
 header {
@@ -59,15 +60,16 @@ section {
 }
 
 footer {
-  position: absolute;
-  justify-content: center;
   bottom: 0;
+  justify-content: center;
+  position: absolute;
+
   button {
-    height: 2rem;
-    min-width: 70px;
     background-color: $white-color;
     border-radius: 5px;
     cursor: pointer;
+    height: 2rem;
+    min-width: 70px;
   }
 }
 </style>

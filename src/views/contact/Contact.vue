@@ -23,8 +23,10 @@ export default {
 #contact {
   article {
     @include flex(column, center, center);
+
     .info {
       @include flex(column, center, center);
+
       .name {
         font-size: 2rem;
       }

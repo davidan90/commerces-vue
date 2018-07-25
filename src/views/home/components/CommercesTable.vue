@@ -64,8 +64,21 @@ export default {
 @import "../../../assets/styles/colors";
 
 .table {
-  width: 100%;
   border: 1px solid $third-color;
+  width: 100%;
+
+  .tr {
+    .th,
+    .td {
+      @include flex(row, center, center);
+
+      height: 100%;
+    }
+
+    .th {
+      background-color: $third-color;
+    }
+  }
 
   .table-head,
   .table-body {
@@ -78,29 +91,20 @@ export default {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .tr {
-    .th,
-    .td {
-      @include flex(row, center, center);
-      height: 100%;
-    }
-
-    .th {
-      background-color: $third-color;
-    }
-  }
-
-  .table-head {
-    .tr {
-      text-transform: uppercase;
-      height: 1.5rem;
-    }
+  .table-head .tr {
+    height: 1.5rem;
+    text-transform: uppercase;
   }
 
   .table-body {
     @include flex(column, inherit, inherit);
+
     .tr {
       height: 3rem;
+
+      .td {
+        border: 0.5px solid $third-color;
+      }
 
       &:nth-child(even) {
         background-color: $gray-color;
@@ -110,17 +114,13 @@ export default {
         background-color: $primary-color;
         cursor: pointer;
       }
-
-      .td {
-        border: 0.5px solid $third-color;
-      }
     }
   }
 
   &.empty {
-    width: 100%;
-    text-align: center;
     background-color: $gray-color;
+    text-align: center;
+    width: 100%;
   }
 }
 </style>

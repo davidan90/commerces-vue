@@ -86,6 +86,7 @@ export default {
 #home,
 #home article {
   @include flex(column, center, center);
+
   width: 100%;
 }
 </style>

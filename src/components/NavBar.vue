@@ -18,11 +18,14 @@ export default {
 <style lang="scss" scoped>
 #navBar {
   width: 100%;
+
   span {
     margin: 0 1rem;
+
     a {
-      text-decoration: none;
       font-weight: bold;
+      text-decoration: none;
+
       &:hover {
         color: #2c3e50;
       }
