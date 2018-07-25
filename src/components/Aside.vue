@@ -42,7 +42,7 @@ aside {
   top: 0;
   width: $aside-width;
 
-  .active {
+  &.active {
     @include flex(column, center, flex-start);
 
     animation: activate 0.5s;
