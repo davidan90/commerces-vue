@@ -1,3 +1,5 @@
+// import { commerces } from "api/";
+
 const state = {
   all: undefined
 };
@@ -15,6 +17,15 @@ const getters = {
 };
 
 const actions = {
+  // async getAllCommerces({ commit }) {
+  //   commit("processingCommerces");
+  //   const commerces = await this.$api.commerces.getAll();
+  //   if (commerces) {
+  //     commit("setAllCommerces", {
+  //       commerces
+  //     });
+  //   }
+  // },
   setAllCommerces({ commit }, commerces) {
     commit("setAllCommerces", {
       commerces

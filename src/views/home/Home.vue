@@ -10,29 +10,29 @@
 </template>
 
 <script>
-import { Spinner } from "../../components";
+import { Spinner } from "components";
 import { CommercesTable, CommerceDetail } from "./components";
 
-const mockCommerces = [
-  {
-    id: 1,
-    name: "Telefonica",
-    nif: "50732",
-    year: 1950
-  },
-  {
-    id: 2,
-    name: "Bankia",
-    nif: "63431",
-    year: 2008
-  },
-  {
-    id: 3,
-    name: "Pescanova",
-    nif: "15571",
-    year: 1995
-  }
-];
+// const mockCommerces = [
+//   {
+//     id: 1,
+//     name: "Telefonica",
+//     nif: "50732",
+//     year: 1950
+//   },
+//   {
+//     id: 2,
+//     name: "Bankia",
+//     nif: "63431",
+//     year: 2008
+//   },
+//   {
+//     id: 3,
+//     name: "Pescanova",
+//     nif: "15571",
+//     year: 1995
+//   }
+// ];
 
 export default {
   name: "Home",
@@ -62,12 +62,12 @@ export default {
       }.bind(this),
       2000
     );
-
     // this.$api.commerces.getAll().then(commerces => {
     //   if (commerces) {
     //     this.$store.dispatch("setAllCommerces", commerces);
     //   }
     // });
+    // this.$store.dispatch("getAllCommerces");
   },
   methods: {
     showCommerceDetail(commerce) {
