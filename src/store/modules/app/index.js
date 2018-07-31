@@ -1,32 +1,7 @@
-const state = {
-  aside: {
-    show: false
-  }
-};
-
-const mutations = {
-  showAside(state) {
-    state.aside.show = true;
-  },
-  hideAside(state) {
-    state.aside.show = false;
-  }
-};
-
-const getters = {
-  getAsideShow(state) {
-    return state.aside.show;
-  }
-};
-
-const actions = {
-  showAside({ commit }) {
-    commit("showAside");
-  },
-  hideAside({ commit }) {
-    commit("hideAside");
-  }
-};
+import state from "./state";
+import mutations from "./mutations";
+import actions from "./actions";
+import getters from "./getters";
 
 export default {
   state,

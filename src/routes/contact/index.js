@@ -1,4 +1,4 @@
-import { Contact } from "../../views";
+import { Contact } from "views";
 
 export const contactRoutes = [
   {

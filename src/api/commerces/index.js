@@ -29,7 +29,7 @@ export const commerces = {
     };
   },
 
-  getAll() {
+  async getAll() {
     // const options = {
     //   method: "GET",
     //   headers: {
@@ -41,11 +41,11 @@ export const commerces = {
     //   .then(response => response.json())
     //   .then(data => data)
     //   .catch(logError("Commerces getAll"));
-
-    return new Promise((resolve, reject) => {
+    const data = await new Promise(resolve => {
       setTimeout(() => {
         resolve(mockCommerces);
       }, 3000);
     });
+    return data;
   }
 };

@@ -18,7 +18,8 @@
         ],
         "alias": {
           "api": "./src/api",
-          "components": "./src/components"
+          "components": "./src/components",
+          "views": "./src/views"
         }
       }
     ]

@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { Aside } from "../../../components";
+import { Aside } from "components";
 
 export default {
   name: "CommerceDetail",

@@ -2,7 +2,7 @@ import Vue from "vue";
 import Router from "vue-router";
 import { homeRoutes } from "./home";
 import { contactRoutes } from "./contact";
-import { NotFound } from "../views";
+import { NotFound } from "views";
 
 Vue.use(Router);
 

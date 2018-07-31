@@ -9,7 +9,7 @@ export default {
   name: "Aside",
   computed: {
     isActive() {
-      return this.$store.getters.getAsideShow;
+      return this.$store.getters.isAsideShow;
     }
   }
 };

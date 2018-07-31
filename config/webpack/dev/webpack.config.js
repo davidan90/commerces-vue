@@ -6,6 +6,7 @@ const { PROTOCOL, HOST, PORT } = require("../env");
 
 module.exports = {
   entry: [
+    "babel-polyfill",
     `webpack-dev-server/client?${PROTOCOL}://${HOST}:${PORT}`,
     "webpack/hot/only-dev-server",
     "./src/main.js"
