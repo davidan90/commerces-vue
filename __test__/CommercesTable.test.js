@@ -25,12 +25,12 @@ describe("CommercesTable.test.js", () => {
     });
 
     it("remove table if commerces undefined", () => {
-      expect(wrapper.contains(".table .table-head")).toBeFalsy();
+      expect(wrapper.contains(".table .table__head")).toBeFalsy();
     });
 
     it("create table if commerces is defined", () => {
       wrapper.setProps({ commerces: [] });
-      expect(wrapper.contains(".table .table-head")).toBeTruthy();
+      expect(wrapper.contains(".table .table__head")).toBeTruthy();
     });
 
     it("when click in row execute showDetail", () => {
@@ -38,7 +38,7 @@ describe("CommercesTable.test.js", () => {
       wrapper.setProps({ commerces: [commerceMock] });
       wrapper.setMethods({ showDetail: stub });
       const row = wrapper
-        .find(".table .table-body .tr")
+        .find(".table .table__body .tr")
         .trigger("click", commerceMock);
       expect(stub).toHaveBeenCalled();
     });

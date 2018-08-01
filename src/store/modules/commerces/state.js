@@ -1,3 +1,6 @@
 export default {
-  all: undefined
+  all: {
+    processing: false,
+    data: undefined
+  }
 };

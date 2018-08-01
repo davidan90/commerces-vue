@@ -1,5 +1,5 @@
 export default {
   allCommerces(state) {
-    return state.all;
+    return state.all.data;
   }
 };

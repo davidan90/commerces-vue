@@ -21,7 +21,9 @@ describe("Aside.test.js", () => {
 
     it("if store is true, have class active", () => {
       params.store.state.app.aside.show = true;
-      expect(shallow(Aside, params).contains("aside.active")).toBeTruthy();
+      expect(
+        shallow(Aside, params).contains("aside.aside--active")
+      ).toBeTruthy();
     });
   });
 
