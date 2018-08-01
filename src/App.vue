@@ -1,14 +1,14 @@
 <template>
   <div id="exampleApp">
-    <header class="header-container">
-      <picture class="logo-container">
+    <header class="header">
+      <picture class="header__logo">
         <img src="./assets/img/logo.png">
       </picture>
-      <div class="navbar-container">
+      <div class="header__navbar">
         <NavBar />
       </div>
     </header>
-    <main class="main-container">
+    <main class="main">
       <router-view/>
     </main>
   </div>
@@ -36,12 +36,12 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  header.header-container,
-  main.main-container {
+  header.header,
+  main.main {
     box-sizing: border-box;
   }
 
-  header.header-container {
+  header.header {
     @include flex(row, center, flex-start);
 
     background-color: $primary-color;
@@ -50,12 +50,12 @@ export default {
     text-transform: uppercase;
     width: 100%;
 
-    .logo-container,
-    .navbar-container {
+    .header__logo,
+    .header__navbar {
       @include flex(row, center, inherit);
     }
 
-    .logo-container {
+    .header__logo {
       justify-content: center;
       width: 20vw;
 
@@ -65,13 +65,13 @@ export default {
       }
     }
 
-    .navbar-container {
+    .header__navbar {
       justify-content: flex-start;
       width: 80vw;
     }
   }
 
-  main.main-container {
+  main.main {
     @include flex(column, center, inherit);
 
     padding: 1.5rem;

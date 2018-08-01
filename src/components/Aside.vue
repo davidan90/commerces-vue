@@ -1,5 +1,5 @@
 <template>
-  <aside :class="{ active: isActive }">
+  <aside :class="{ 'aside--active': isActive }">
     <slot/>
   </aside>
 </template>
@@ -42,7 +42,7 @@ aside {
   top: 0;
   width: $aside-width;
 
-  &.active {
+  &.aside--active {
     @include flex(column, center, flex-start);
 
     animation: activate 0.5s;

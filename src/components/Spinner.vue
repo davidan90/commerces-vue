@@ -1,5 +1,5 @@
 <template>
-  <div class="load-spinner"/>
+  <div class="spinner"/>
 </template>
 
 <script>
@@ -19,7 +19,7 @@ export default {
   }
 }
 
-.load-spinner {
+.spinner {
   animation: spin 2s linear infinite;
   border: 5px solid #f3f3f3;
   border-radius: 50%;

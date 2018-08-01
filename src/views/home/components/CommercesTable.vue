@@ -1,13 +1,13 @@
 <template>
   <div v-if="commerces" class="table">
-    <div class="table-head">
+    <div class="table__head">
       <div v-for="(header, index) in headers" :key="index" class="tr">
         <div class="th">
           <span>{{ header }}</span>
         </div>
       </div>
     </div>
-    <div v-if="hasCommerces" class="table-body">
+    <div v-if="hasCommerces" class="table__body">
       <div v-for="commerce in commerces" :key="commerce.id" class="tr" @click="showDetail(commerce)">
         <div class="td">
           <span>{{ commerce.name }}</span>
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div v-if="!hasCommerces" class="table empty">
+    <div v-if="!hasCommerces" class="table__body--empty">
       <span>{{ $t("home.sections.commerces.table.empty") }}</span>
     </div>
   </div>
@@ -80,23 +80,23 @@ export default {
     }
   }
 
-  .table-head,
-  .table-body {
+  .table__head,
+  .table__body {
     width: 100%;
   }
 
-  .table-head,
-  .table-body .tr {
+  .table__head,
+  .table__body .tr {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .table-head .tr {
+  .table__head .tr {
     height: 1.5rem;
     text-transform: uppercase;
   }
 
-  .table-body {
+  .table__body {
     @include flex(column, inherit, inherit);
 
     .tr {
@@ -117,7 +117,7 @@ export default {
     }
   }
 
-  &.empty {
+  .table__body--empty {
     background-color: $gray-color;
     text-align: center;
     width: 100%;
