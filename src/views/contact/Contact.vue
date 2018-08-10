@@ -18,7 +18,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/styles/mixins";
+@import "mixins";
 
 #contact {
   article {
@@ -29,6 +29,7 @@ export default {
 
       .name {
         font-size: 2rem;
+        text-align: center;
       }
     }
   }

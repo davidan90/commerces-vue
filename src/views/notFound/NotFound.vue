@@ -11,7 +11,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../assets/styles/mixins";
+@import "mixins";
 
 #notFound {
   @include flex(column, center, center);

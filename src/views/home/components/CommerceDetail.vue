@@ -35,8 +35,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/styles/mixins";
-@import "../../../assets/styles/colors";
+@import "mixins";
+@import "colors";
 $margin: 0.5rem;
 
 header,

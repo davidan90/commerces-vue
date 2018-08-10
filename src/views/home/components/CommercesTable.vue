@@ -60,8 +60,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../../assets/styles/mixins";
-@import "../../../assets/styles/colors";
+@import "mixins";
+@import "colors";
 
 .table {
   border: 1px solid $third-color;

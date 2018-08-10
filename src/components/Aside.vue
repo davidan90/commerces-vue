@@ -16,9 +16,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/mixins";
-@import "../assets/styles/colors";
-@import "../assets/styles/responsive";
+@import "mixins";
+@import "colors";
+@import "responsive";
 $aside-width: 30vw;
 $aside-active-right: 0;
 
